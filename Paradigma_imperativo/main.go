@@ -50,7 +50,7 @@ func llenar2() { //meter datos slice, solo se metio 1
 
 // PRIMERA IMPLEMENTACIÓN primeras 3 con arreglo
 // recorrido tradicional con range... pruebe hacerlo utilizando la función len(arreglo)
-func masParecido(lista [5]persona, muestra [10]byte) int {
+func masParecido(lista [5]persona, muestra [10]byte) persona {
 	cont, max := 0, 0 //max cantidad genes iguales
 	masparecido := 0
 	for i, individuo := range lista {
@@ -66,13 +66,13 @@ func masParecido(lista [5]persona, muestra [10]byte) int {
 		}
 
 	}
-	return masparecido
+	return lista[masparecido]
 }
 
 // SEGUNDA IMPLEMENTACIÓN
 // usando punteros a arreglos... un poco más difícil de leer
 // se recibe un puntero a la lista de personas
-func masParecido2(lista *[5]persona, muestra [10]byte) int {
+func masParecido2(lista *[5]persona, muestra [10]byte) persona {
 	cont, max := 0, 0
 	masparecido := 0
 	for i, individuo := range *lista {
@@ -88,7 +88,7 @@ func masParecido2(lista *[5]persona, muestra [10]byte) int {
 		}
 
 	}
-	return masparecido
+	return lista[masparecido]
 }
 
 // TERCERA IMPLEMENTACIÓN
@@ -104,7 +104,7 @@ func (person *persona) verificar(muestra [10]byte) int {
 	return cont
 }
 
-func masParecido3(lista [5]persona, muestra [10]byte) int {
+func masParecido3(lista [5]persona, muestra [10]byte) persona {
 	cont, max := 0, 0
 	masparecido := 0
 	for i, individuo := range lista {
@@ -115,12 +115,12 @@ func masParecido3(lista [5]persona, muestra [10]byte) int {
 		}
 
 	}
-	return masparecido
+	return lista[masparecido]
 }
 
 // CUARTA IMPLEMENTACIÓN
 // Usando Slices... Es mejor en Go utilizar Slice en vez de punteros y hay más flexibilidad de trabajar con el arreglo
-func masParecido4(lista []persona, muestra []byte) int {
+func masParecido4(lista []persona, muestra []byte) persona {
 	cont, max := 0, 0
 	masparecido := 0
 	for i, individuo := range lista {
@@ -137,7 +137,7 @@ func masParecido4(lista []persona, muestra []byte) int {
 		}
 
 	}
-	return masparecido
+	return lista[masparecido]
 }
 
 func main() {
