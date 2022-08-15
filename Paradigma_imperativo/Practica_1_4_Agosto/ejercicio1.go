@@ -16,43 +16,32 @@ import (
 
 func textAnalizer(text string) {
 
-	characters, lines := 0, 1
+	characters := 0
 
 	words := strings.Split(text, " ")
-	lines2 := strings.Split(text, "\n")
+	lines := strings.Split(text, "\n")
 
-	for char := range text {
-
-		if char >= 'a' && char <= 'z' {
-
-			characters++
-
-		} else if char >= 'A' && char <= 'Z' {
-
-			characters++
-
-		} else if char == ' ' {
-
-			characters++
-
-		} else if char == '\n' {
-
-			lines++
-
-		} else {
-
-			characters++
-		}
+	for range text {
+		characters++
 	}
 
-	fmt.Println("In the text are: \n", characters+2, "characters\n", lines, "lines\n", len(words), " words", "\n lines22: ", len(lines2))
+	fmt.Println("In the given text are: \n", characters, "characters\n", len(lines), "lines\n", len(words), " words")
 }
 func main() {
 
-	Texto := "Doña Uzeada de Rizo\n" +
-		"Y muy delicioso\n" +
-		"me encanta comer pizza"
-
+	Texto :=
+		`Soy ginebrino de nacimiento, y mi familia es una de las más distinguidas de esa república. 
+Durante muchos años mis antepasados habían sido consejeros y jueces, y mi padre había ocupado con gran honor 
+y buena reputación diversos cargos públicos. Todos los que lo conocían lo respetaban por su integridad e infatigable 
+dedicación. Pasó su juventud dedicado por completo a los asuntos de su país, y sólo al final de su vida pensó en el 
+matrimonio y así dar al Estado unos hijos que pudieran perpetuar su nombre y sus virtudes.`
 	textAnalizer(Texto)
 
 }
+
+/** RESULTADO TERMINAL:
+In the given text are:
+527 characters
+5 lines
+91  words
+*/

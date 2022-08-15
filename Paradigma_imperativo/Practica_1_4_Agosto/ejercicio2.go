@@ -23,42 +23,55 @@ import (
 	"fmt"
 )
 
-func printTriangle(levels int) {
+func printDiamond(levels int) {
 
 	if levels%2 != 0 && levels > 0 {
 
-		for i := 0; i < levels; i++ {
-			for j := levels - 1 - i; j >= 0; j-- {
+		for row := 0; row < levels; row += 2 {
+
+			var whiteSpacesLimit int = levels - row
+			for empty := 0; empty <= whiteSpacesLimit; empty++ {
 				fmt.Print(" ")
 
 			}
-			for k := 0; k <= i; k++ {
-				fmt.Print("* ")
-
-			}
-			fmt.Println("")
-		}
-		for i := 0; i < levels; i++ {
-
-			for j := 0; j <= i+1; j++ {
-				fmt.Print(" ")
-			}
-			for k := levels - 2 - i; k >= 0; k-- {
+			lessAsterisk := row
+			for column := 0; column <= lessAsterisk; column++ {
 				fmt.Print("* ")
 			}
 			fmt.Println("")
 
 		}
+		for row := 0; row < levels-2; row += 2 {
+
+			var whiteSpacesLimit int = 4 + row
+			for empty := 0; empty <= whiteSpacesLimit-1; empty++ {
+				fmt.Print(" ")
+
+			}
+			lessAsterisk := (levels - whiteSpacesLimit) + 1
+			for column := 0; column <= lessAsterisk; column++ {
+				fmt.Print("* ")
+			}
+			fmt.Println("")
+
+		}
+	} else {
+		fmt.Println("Please try a positive odd number")
 		return
-
 	}
-	fmt.Println("Please try a positive odd number")
-	return
 
 }
 
 func main() {
 
-	printTriangle(3)
+	printDiamond(5)
 
 }
+
+/** RESULTADO
+      *
+    * * *
+  * * * * *
+    * * *
+      *
+*/
