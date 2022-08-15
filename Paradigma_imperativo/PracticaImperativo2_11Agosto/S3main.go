@@ -5,6 +5,18 @@ import (
 	"sort"
 )
 
+/**
+Amplie el funcionamiento del ejercicio de Productos visto en clase para que el programa ahora permita:
+a.	A partir de la lista de productos con mínimas existencias de inventario, ampliar dicho inventario con la
+compra de más unidades de dicho producto hasta que cumplan con el mínimo establecido de manera constante. Se sugiere crear una
+función denominada “aumentarInventarioDeMinimos(listaMinimos)”.
+
+b.	Crear una función que ordene la lista de productos usando como llave para el ordenamiento cualquiera de los elementos de la
+estructura producto. La lista/slice debe quedar modificada al finalizar el método. Se solicita investigar y hacer uso de alguna función predefinida
+de alguna librería del lenguaje Go.
+
+*/
+
 type producto struct {
 	nombre   string
 	cantidad int
