@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/GolandProjects/Lab1/.idea/Lab1.iml" filepath="$USER_HOME$/GolandProjects/Lab1/.idea/Lab1.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Paradigma_imperativo.iml" filepath="$PROJECT_DIR$/.idea/Paradigma_imperativo.iml" />
       <module fileurl="file://$USER_HOME$/OneDrive - Estudiantes ITCR/TEC/4 Semestre/Lenguajes de Programacion/Semana 3/.idea/Semana 3.iml" filepath="$USER_HOME$/OneDrive - Estudiantes ITCR/TEC/4 Semestre/Lenguajes de Programacion/Semana 3/.idea/Semana 3.iml" />
+      <module fileurl="file://$USER_HOME$/GolandProjects/semana4/.idea/semana4.iml" filepath="$USER_HOME$/GolandProjects/semana4/.idea/semana4.iml" />
     </modules>
   </component>
 </project>
