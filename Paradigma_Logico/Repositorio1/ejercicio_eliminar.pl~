@@ -1,0 +1,8 @@
+
+%Ejercicio de eliminar una lista
+
+eliminarElemento(_, [ ], [ ]). %En caso de que la lista este vacia se devuelve
+eliminarElemento(X, [X|L], M) :-  eliminarElemento(X,L,M),!. %En caso de que la cabeza de la lista sea igual al elemento se llama con cola
+eliminarElemento(X, [Y|L1], [Y|L2]) :- eliminarElemento(X, L1, L2).%En caso de que la cabeza sea distinta del elemento, el elemento se le adjunta
+                                                          %a la nueva lista y esto sucede si solo si se continua buscando eliminar en la cola
+                                                          %de la nueva lista
