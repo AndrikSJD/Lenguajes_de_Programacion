@@ -11,12 +11,15 @@ listaOp = []
 def leerExp():          
     try:
         expresion = input("Ingrese la expresion matematica: ")
+        check_expresion = expresion.split(" ")
+        for i in range(0,len(check_expresion)):
+            if(i != len(check_expresion)-1 and re.search("[0-9]+", check_expresion[i]) and re.search("[0-9]+", check_expresion[i+1])):
+                raise FormatoValidoException("Formato expresion infijo invalido")
         expresion_without_spaces = expresion.replace(" ", "") #quitar los espacios
         list = re.split("(?=[-+*/])|(?<=[-+*/])", expresion_without_spaces) #expresion regular para convertir en lista
-        
         for i in range(0,len(list)):
             if (i%2 != 0 and re.search("[0-9]+",list[i])):
-                raise FormatoValidoException("Formato invalido")
+                raise FormatoValidoException("Formato expresion infijo invalido")
 
         descomponer(list);
     except FormatoValidoException as err:

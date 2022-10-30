@@ -27,25 +27,41 @@ public class LenguajesS14 {
     }
 
     public static void leerExp() {
-        String expresion;
-        Scanner leer = new Scanner(System.in);
-        System.out.print("Introduzca la expresion: ");
-        expresion = leer.nextLine();
-        String data = expresion.replaceAll("\\s", ""); //quitar espacios en blanco, reemplaza " " por ""
-        String[] data2 = data.split("(?=[-+*/])|(?<=[-+*/])"); //expresion regular para hacer el split antes o despues del simbolo matematico
-        List<String> list = Arrays.asList(data2); //lista con numeros y operadores
+        try {
+            String expresion;
+            Scanner leer = new Scanner(System.in);
+            System.out.print("Introduzca la expresion: ");
+            ArrayList<String> data2 = new ArrayList<String>();
+            expresion = leer.nextLine();
+            String[] comprobar = expresion.split(" ");
+            for (int i = 0; i < comprobar.length; i++) {
+                if( i != (comprobar.length)-1 && comprobar[i].matches("[0-9]+") && comprobar[i+1].matches("[0-9]+")){
+                    throw new FormatoValidoException("Formato expresion infija invalido");
+                }
+            }
+            String[] data = expresion.split("(?=[-+*/])|(?<=[-+*/])");//expresion regular para hacer el split antes o despues del simbolo matematico
+            for (String elem : data) {
+                if (!(elem.matches(" "))){
+                    data2.add(elem.replaceAll("\\s", "")); //quitar espacios en blanco, reemplaza " " por ""
+                } 
+                         
+            }
+            descomponer(data2);
 
-        descomponer(list);
-
+        } catch (FormatoValidoException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
     }
 
-    public static void descomponer(List<String> exp) {
+
+    public static void descomponer(ArrayList<String> exp) {
 
         try {
 
             for (int i = 0; i < exp.size(); i++) {
                 String val = exp.get(i);
-                if (i % 2 == 0 && val.matches("[0-9]+") == false) {
+                if ( i%2 != 0 && val.matches("[0-9]+") || i%2 == 0 && val.matches("[/*+-]")) {
                     throw new FormatoValidoException("Formato expresion infija invalido");
 
                 } else {
@@ -64,13 +80,14 @@ public class LenguajesS14 {
                     }
                 }
             }
+            realizarOP();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
 
         }
-        realizarOP();
+        
 
     }
 
