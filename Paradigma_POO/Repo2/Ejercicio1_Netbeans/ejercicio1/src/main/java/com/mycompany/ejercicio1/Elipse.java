@@ -10,8 +10,25 @@ package com.mycompany.ejercicio1;
  */
 public class Elipse extends Figura {
     
-    public Elipse(String nombre, int vertices, int perimetro) {
-        super(nombre, vertices, perimetro);
+    public Elipse(String nombre) {
+
+        super(nombre);
     }
-    
+
+    @Override
+    public int getArea() {
+        return 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Elipse{" +
+                "nombre='" + nombre + '\'' +
+                ", vertices=" + vertices +
+                ", largo=" + largo +
+                ", ancho=" + ancho +
+                ", altura=" + altura +
+                ", perimetro=" + perimetro +
+                '}';
+    }
 }

@@ -10,14 +10,32 @@ package com.mycompany.ejercicio1;
  */
 public class Circulo extends Figura {
     
-    int area;
-    int numero_cuerdas;
+    int radio;
+    double pi;
     
 
-    public Circulo(int area, int numero_cuerdas, String nombre, int vertices, int perimetro) {
-        super(nombre, vertices, perimetro);
-        this.area = area;
-        this.numero_cuerdas = numero_cuerdas;
+    public Circulo(String nombre, int radio) {
+        super(nombre);
+        this.radio = radio;
+        this.pi = 3.14;
     }
-    
+
+    @Override
+    public int getArea() {
+        return 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Circulo{" +
+                "radio=" + radio +
+                ", pi=" + pi +
+                ", nombre='" + nombre + '\'' +
+                ", vertices=" + vertices +
+                ", largo=" + largo +
+                ", ancho=" + ancho +
+                ", altura=" + altura +
+                ", perimetro=" + perimetro +
+                '}';
+    }
 }

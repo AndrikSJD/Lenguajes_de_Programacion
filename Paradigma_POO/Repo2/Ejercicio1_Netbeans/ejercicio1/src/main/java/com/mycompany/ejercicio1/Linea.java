@@ -10,8 +10,25 @@ package com.mycompany.ejercicio1;
  */
 public class Linea extends Figura {
     
-    public Linea(String nombre, int vertices, int perimetro) {
-        super(nombre, vertices, perimetro);
+    public Linea(String nombre) {
+
+        super(nombre);
     }
-    
+
+    @Override
+    public int getArea() {
+        return 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Linea{" +
+                "nombre='" + nombre + '\'' +
+                ", vertices=" + vertices +
+                ", largo=" + largo +
+                ", ancho=" + ancho +
+                ", altura=" + altura +
+                ", perimetro=" + perimetro +
+                '}';
+    }
 }

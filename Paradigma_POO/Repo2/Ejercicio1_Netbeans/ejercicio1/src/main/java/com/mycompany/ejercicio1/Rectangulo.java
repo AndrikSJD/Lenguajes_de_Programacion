@@ -10,8 +10,26 @@ package com.mycompany.ejercicio1;
  */
 public class Rectangulo extends Figura {
     
-    public Rectangulo(String nombre, int vertices, int perimetro) {
-        super(nombre, vertices, perimetro);
+    public Rectangulo(String nombre) {
+
+
+        super(nombre);
     }
-    
+
+    @Override
+    public int getArea() {
+        return 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangulo{" +
+                "nombre='" + nombre + '\'' +
+                ", vertices=" + vertices +
+                ", largo=" + largo +
+                ", ancho=" + ancho +
+                ", altura=" + altura +
+                ", perimetro=" + perimetro +
+                '}';
+    }
 }

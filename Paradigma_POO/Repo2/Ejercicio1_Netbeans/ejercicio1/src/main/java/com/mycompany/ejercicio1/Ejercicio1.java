@@ -12,6 +12,34 @@ package com.mycompany.ejercicio1;
 public class Ejercicio1 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+
+
+        Rectangulo rectangulotemp = new Rectangulo("Rectangulo 1");
+        Circulo circulotemp = new Circulo("Circulo 1", 20);
+
+        Cuadrado cuadradotemp = new Cuadrado("Cuadrado 1", 10);
+
+        Texto textotemp1 = new Texto("Hola mundo");
+        Texto textotemp2 = new Texto("Comida tailandesa");
+
+
+        Grupo grupotemp = new Grupo("grupo1");
+
+        grupotemp.addFigura(circulotemp);
+
+
+        Hoja hojatemp = new Hoja("Hoja de matematica");
+
+        hojatemp.addFigura(rectangulotemp);
+        hojatemp.addGrupo(grupotemp);
+        hojatemp.addTexto(textotemp1);
+        hojatemp.addFigura(cuadradotemp);
+        hojatemp.addTexto(textotemp2);
+
+
+        System.out.println("Hoja creada" + hojatemp);
+
+
+
     }
 }
